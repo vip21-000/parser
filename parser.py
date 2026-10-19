@@ -5,11 +5,15 @@ import time
 
 rows = []
 for page in range(1, 51):
-    url = f"https://books.toscrape.com/catalogue/page-{page}.html"
-    resp = requests.get(url)
-    resp.raise_for_status()
-    resp.encoding = "utf-8"
-    soup = BeautifulSoup(resp.text, "html.parser")
+    try:
+        url = f"https://books.toscrape.com/catalogue/page-{page}.html"
+        resp = requests.get(url, timeout=(3.1, 10))
+        resp.raise_for_status()
+        resp.encoding = "utf-8"
+        soup = BeautifulSoup(resp.text, "html.parser")
+    except requests.exceptions.RequestException as e:
+        print(f"Помилка: {e}, Номер сторінки: {page}")
+        continue
 
 
     for book in soup.select("article.product_pod"):
@@ -18,7 +22,7 @@ for page in range(1, 51):
         rows.append({"title": title, "price": price})
 
     print(f"Сторінка {page} готова")
-    time.sleep(0.1)
+    time.sleep(1)
 
 
 for row in rows:
