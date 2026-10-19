@@ -4,6 +4,15 @@ import pandas as pd
 import time
 
 rows = []
+
+rating_map = {
+    "One": 1,
+    "Two": 2,
+    "Three": 3,
+    "Four": 4,
+    "Five": 5
+}
+
 for page in range(1, 51):
     try:
         url = f"https://books.toscrape.com/catalogue/page-{page}.html"
@@ -19,8 +28,13 @@ for page in range(1, 51):
     for book in soup.select("article.product_pod"):
         title = book.h3.a["title"]
         price = book.select_one("p.price_color").text.strip()
-        rows.append({"title": title, "price": price})
-
+        #rating = rating_map[book.p['class'][1]] # хоча можна було б так зробити
+        rating = book.p['class']          #
+        rating_word = rating[1]           #
+        rating = rating_map[rating_word]  #
+        book_url = book.h3.a["href"]
+        start = "https://books.toscrape.com/catalogue/"
+        rows.append({"title": title, "price": price,"rating": rating, "book_url": f"{start}{book_url}"})
     print(f"Сторінка {page} готова")
     time.sleep(1)
 
