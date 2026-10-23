@@ -28,7 +28,7 @@ for page in range(1, 51):
     for book in soup.select("article.product_pod"):
         title = book.h3.a["title"]
         price = book.select_one("p.price_color").text.strip()
-        #rating = rating_map[book.p['class'][1]] # хоча можна було б так зробити
+        #rating = rating_map[book.p['class'][1]] # although it could be done that way
         rating = book.p['class']          #
         rating_word = rating[1]           #
         rating = rating_map[rating_word]  #
