@@ -9,6 +9,9 @@ __pycache__/
 dist/
 build/
 *.egg-info/
+
 *csv
 *xlsx
-*.png
+
+
+site_check.py

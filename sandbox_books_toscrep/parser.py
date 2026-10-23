@@ -44,7 +44,7 @@ for row in rows:
 
 
 df = pd.DataFrame(rows)
-df.to_csv("books.csv", index=False, encoding="utf-8-sig")
-df.to_excel("books.xlsx", index=False)
+df.to_csv("toscrep_catalog.csv", index=False, encoding="utf-8-sig")
+df.to_excel("toscrep_catalog.xlsx", index=False)
 print(df.head())
 print(len(df))
