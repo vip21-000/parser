@@ -1,3 +1,5 @@
+[English](README.md) | Українська 
+
 # Sandbox: Books to Scrape Parser
 
 Навчальний парсер, створений для відпрацювання базових навичок вебсканування на тестовому майданчику [Books to Scrape](http://books.toscrape.com/).

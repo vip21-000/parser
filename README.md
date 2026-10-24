@@ -1,21 +1,25 @@
+English | [Українська](README.uk.md)
+
 # Parser
 
-Цей репозиторій є практичним портфоліо зі світу вебсканування (Web Scraping). 
-Він демонструє еволюцію навичок розробника від простих скриптів-пісочниць до роботи зі складними сайтами та структурами даних.
+This repository is a practical portfolio in the field of Web Scraping. 
+It shows the evolution of developer skills from simple sandbox scripts to working with complex websites and data structures.
 
-## Структура репозиторію
+## Repository Structure
 
-* [sandbox_books_toscrape/](sandbox_books_toscrape/) - навчальна пісочниця на базі тестового сайту [Books to Scrape](http://books.toscrape.com/). 
-Фокус на базовому парсингу HTML, використанні селекторів та збереженні даних.
-* [starylev/](starylev/) - реальний проєкт для збору даних із сайту «Видавництва Старого Лева». 
-Збір масштабної бази даних (4775 позицій), обробка пагінації, дотримання етики вебсканування (robots.txt, паузи між запитами).
+* [sandbox_books_toscrape/](sandbox_books_toscrape/) — A learning sandbox based on the test site [Books to Scrape](http://books.toscrape.com/). 
+Focuses on basic HTML parsing, selector usage, and saving data.
+* [starylev/](starylev/) — A real project for scraping data from the "Old Lion Publishing House" (Stary Lev) website. 
+Scrapes a large database (4,775 items), handles pagination, and respects web scraping ethics (robots.txt, delays between requests).
 
-## Швидкий старт
+## Quick Start
 
-1. Клонуйте репозиторій та створіть віртуальне середовище:
+1. Clone the repository and create a virtual environment:
    ```bash
    python -m venv .venv
-   source .venv/bin/activate  # Для Windows: .venv\Scripts\activate
-   ```
+   source .venv/bin/activate  # For Windows: .venv\Scripts\activate
+
+
+2. Install the required dependencies:
 
 pip install -r requirements.txt
